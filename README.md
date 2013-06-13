@@ -35,10 +35,13 @@ TSNetwork works on any iOS version and is compatible only with non-ARC projects.
 
 ## How to get started
 
-1. Add the files under 'Source' and 'Library' directories to your project, and make sure 'TSDatabase' is added as resource.
-2. Add the require frameworks to your project.
-3. Include TSNetwork wherever you need it with `#import "TSNetwork.h"`
-4. Add the following codes in the 'AppDelegate.m" file:
+Add the files under 'Source' and 'Library' directories to your project, and make sure 'TSDatabase' is added as resource.
+
+Add the require frameworks to your project.
+
+Include TSNetwork wherever you need it with `#import "TSNetwork.h"`
+
+Add the following codes in the 'AppDelegate.m" file:
 
 ```objective-c
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -56,7 +59,7 @@ TSNetwork works on any iOS version and is compatible only with non-ARC projects.
     [[TSImageStore sharedStore] didReceiveMemoryWarning];
 }
 ```
-5. When you are going to handle http request, create a class which subclass 'BaseClient' class and add the following codes into it:
+When you are going to handle http request, create a class which subclass 'BaseClient' class and add the following codes into it:
 
 ```objective-c
 - (BOOL)isResponseValid:(id)responseObj {
@@ -91,8 +94,9 @@ TSNetwork works on any iOS version and is compatible only with non-ARC projects.
 
 ```
 
-6. Change "DemoClient" to the name of your class.
-7. Add corresonding server interfaces in this class like:
+Change "DemoClient" to the name of your class.
+
+Add corresonding server interfaces in this class like:
 
 ```objective-c
 - (void)getListDataWithStart:(int)start limit:(int)limit {
@@ -103,7 +107,7 @@ TSNetwork works on any iOS version and is compatible only with non-ARC projects.
     nil]];
 }
 ```
-8. In the place where you want to access the http request, add codes like:
+In the place where you want to access the http request, add codes like:
 
 ```objective-c
 - (void)loadListData {
@@ -124,8 +128,9 @@ if (sender.hasError) {
     NSDictionary *dic = (NSDictionary *)obj;
 }
 ```
-9. When you want to download images, use TSImageView or TSImageButton and get image with "getImage:" function by passing the image url into it.
-10. Make sure you add a image named "TSDefaultSmallImage" as default image in the project, or the application will crash with "Default Image not exist".
+When you want to download images, use TSImageView or TSImageButton and get image with `getImage` function by passing the image url into it.
+
+Make sure you add a image named "TSDefaultSmallImage" as default image in the project, or the application will crash with "Default Image not exist".
 
 ## License
 
